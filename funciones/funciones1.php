@@ -1,21 +1,4 @@
 <?php
-// $alumnos = [
-//     ["dni" => 111, "nombre" => "Marta", "apellido" => "Garcia", "edad" => 21, "ciclo" => "daw"],
-//     ["dni" => 222, "nombre" => "Lucia", "apellido" => "Perez", "edad" => 18, "ciclo" => "daw"],
-//     ["dni" => 333, "nombre" => "Maya", "apellido" => "Rodriguez", "edad" => 22, "ciclo" => "daw"],
-//     ["dni" => 444, "nombre" => "Rita", "apellido" => "Gutierrez", "edad" => 25, "ciclo" => "daw"],
-// ];
-// function insert($dni, $nombre, $apellido, $edad, $ciclo) {
-//     printf("INSERT INTO Alumnos(dni, nombre, apellidos, edad, ciclo) VALUES (%d, '%s', '%s', %d, '%s')\n", 
-//         $dni, $nombre, $apellido, $edad, $ciclo);
-// }
-
-// foreach ($alumnos as $alumno) {
-//     insert($alumno['dni'], $alumno['nombre'], $alumno['apellido'], $alumno['edad'], $alumno['ciclo']);
-//     echo "<br>";
-// }
-
-
 
 $alumnos = [
     ["dni" => 111, "nombre" => "Marta", "apellido" => "Garcia", "edad" => 21, "ciclo" => "daw"],

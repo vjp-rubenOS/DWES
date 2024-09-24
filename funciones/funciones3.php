@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * crear funcion que reciba 4 parametros de forma anonima
+ */
 
 $suma= function ($num1,$num2) {
     return $num1+$num2;
