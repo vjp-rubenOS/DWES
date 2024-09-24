@@ -35,8 +35,22 @@ echo "<br>";
   $altura=2;
   $coches=1;
   $frase= "Pepe con edad: $edad , altura de $altura y con $coches coches";
-  echo $frase;
+  echo $frase."<br>";
 
+  /**
+   * utilizacion de if else
+   */
+  $numero=rand(1,3);
+  echo $numero."<br>";
+
+   if($numero==3){
+    echo "El numero es el tres ";
+
+   }elseif($numero>3){
+    echo "El numero es mayor de tres";
+   }else{
+    echo "El numero es menor de tres";
+   }
 
 
 
