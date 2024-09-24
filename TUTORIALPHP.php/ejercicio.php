@@ -51,6 +51,35 @@ echo "<br>";
    }else{
     echo "El numero es menor de tres";
    }
+   echo "<br>";
+   /**
+    * Tablas de multiplicar con for , while y do while
+    */
+    echo " tabla de multiplicar for"."<br>";
+    //for
+    for($i=1;$i<=10;$i++){
+        $multiplicacion=2*$i;
+        echo "2 x $i = $multiplicacion"."<br>";
+    }
+    echo " tabla de multiplicar while"."<br>";
+    //while
+    $i=1;
+    while($i<=10){
+        $multiplicacion=2*$i;
+        echo "2 x $i = $multiplicacion"."<br>";
+        $i++;
+
+    }
+    echo " tabla de multiplicar con do while"."<br>";
+    // do while
+
+    $i=1;
+    do{
+        $multiplicacion=2*$i;
+        echo "2 x $i = $multiplicacion"."<br>";
+        $i++;
+
+    }while($i<=10);
 
 
 
