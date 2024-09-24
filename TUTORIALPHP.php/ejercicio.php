@@ -27,4 +27,17 @@ echo "<br>";
  $boolean=true;
  echo $boolean."<br>";
 
+ /**
+  * Ejercicio de cadenas y concatenar
+
+  */
+  $edad=33;
+  $altura=2;
+  $coches=1;
+  $frase= "Pepe con edad: $edad , altura de $altura y con $coches coches";
+  echo $frase;
+
+
+
+
 ?>
