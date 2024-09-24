@@ -11,7 +11,7 @@ echo "<br>";
 /**
  * ejercicio 2
  */
-echo count($nombres);
+echo "el numero de elementos es: ".count($nombres);
 echo "<br>";
 
 /**
@@ -109,6 +109,7 @@ shuffle($nombres);
 </html>
 
 <?php
+
 /**
  * Ejercicio 11
  */
