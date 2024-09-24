@@ -12,4 +12,19 @@ if($num>50){
     echo "El numero es menor de 50";
 }
 
+
+/**
+ * Ejercicio definir una variable por linea 
+ */
+echo "<br>";
+echo "<br>";
+ $entero=3;
+ echo $entero."<br>";
+ $double=2.33;
+ echo $double."<br>";
+ $string="hola";
+ echo $string."<br>";
+ $boolean=true;
+ echo $boolean."<br>";
+
 ?>
