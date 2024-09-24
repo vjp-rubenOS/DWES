@@ -2,20 +2,20 @@
 
 
 /**
- * ejercicio 1
+ * ejercicio 1 Crear un array
  */
 $nombres = array('Ruben','Pepe', 'Juan', 'Maria');
 print_r($nombres);
 echo "<br>";
 
 /**
- * ejercicio 2
+ * ejercicio 2 Mostrar numero de elementos
  */
 echo "el numero de elementos es: ".count($nombres);
 echo "<br>";
 
 /**
- * ejercicio 3
+ * ejercicio 3 Crear una cadena con los alumnos y el array separado por espacio
  */
 
 $cadena = implode(' y ', $nombres);
@@ -23,7 +23,7 @@ echo "los integrantes de clase son: $cadena ";
 echo "<br>";
 
 /**
- * ejercicio 4
+ * ejercicio 4 Mostrar ordenado 
  */
 
 sort($nombres);
@@ -31,7 +31,7 @@ print_r($nombres);
 echo "<br>";
 
 /**
- * ejercicio 5
+ * ejercicio 5 Mostrar array orden inverso
  */
 // primero los descoloco con shuffle
 
@@ -43,27 +43,27 @@ shuffle($nombres);
  echo "<br>";
 
  /**
-  * ejercicio 6
+  * ejercicio 6 Mostrar posicion de mi nombre
   */
   $buscar_posicion = array_search('Ruben',$nombres);
   echo "Mi nombre esta en la posicion: $buscar_posicion";
   echo "<br>";
 
   /**
-   * ejercicio 7
+   * ejercicio 7 Mostrar array en orden aleatorio
    */
   shuffle($nombres);
   print_r($nombres) ;
   echo "<br>";
   /**
-   * ejercicio 8
+   * ejercicio 8 Mostrar alumnos que contangan la a 
    */
   $patron_buscar='[a]';
   $array_resultado = preg_grep($patron_buscar,$nombres);
   print_r($array_resultado)."<br>";
 
   /**
-   * ejercicio 9
+   * ejercicio 9 crear un array compuesto de arrays 
    * 
    */
   $alumnos=[
@@ -73,7 +73,7 @@ shuffle($nombres);
   ];
 
   /**
-   * ejercicio 10
+   * ejercicio 10 crear una tabla con los datos
    */
   
   ?>
@@ -111,7 +111,7 @@ shuffle($nombres);
 <?php
 
 /**
- * Ejercicio 11
+ * Ejercicio 11 conseguir array indexsado
  */
 
 
@@ -121,7 +121,7 @@ print_r($soloNombres);
 echo "<br>";
 
 /**
- * Ejercicio 12
+ * Ejercicio 12 Crar array con numeros y usando funcion suma
  */
 
  $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
