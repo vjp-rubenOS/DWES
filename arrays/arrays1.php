@@ -86,7 +86,7 @@ shuffle($nombres);
   
 </head>
 <body>
-    <h1>Lista de Alumnos</h1>
+    
     <table border="1">
         <thead>
             <tr>
