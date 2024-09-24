@@ -113,6 +113,14 @@ shuffle($nombres);
  * Ejercicio 11
  */
 
+
+
+$soloNombres= array_column($alumnos,'Nombre');
+print_r($soloNombres);
+/**
+ * Ejercicio 12
+ */
+
 ?>  
 
 
