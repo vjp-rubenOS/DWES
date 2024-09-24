@@ -117,9 +117,19 @@ shuffle($nombres);
 
 $soloNombres= array_column($alumnos,'Nombre');
 print_r($soloNombres);
+echo "<br>";
+
 /**
  * Ejercicio 12
  */
+
+ $numeros = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+
+$suma = array_sum($numeros);
+
+
+echo "La suma de los 10 numeros es: " . $suma."<br>";
 
 ?>  
 
