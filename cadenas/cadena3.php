@@ -13,9 +13,9 @@
      */
     echo "Utilizacion del protocolo"."<br>";
     $url = 'http://username:password@hostname:9090/path?arg=value#anchor';
-    print_r(parse_url($url));
+    print_r(parse_url($url))."<br>";
 
-    echo parse_url($url,PHP_URL_USER);
+    echo parse_url($url,PHP_URL_USER)."<br>";
 
     
     ?>
