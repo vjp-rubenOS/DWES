@@ -11,6 +11,7 @@
     /**
      * El protocolo utilizado y el nombre de usuario por ejemplo
      */
+    echo "Utilizacion del protocolo"."<br>";
     $url = 'http://username:password@hostname:9090/path?arg=value#anchor';
     print_r(parse_url($url));
 
