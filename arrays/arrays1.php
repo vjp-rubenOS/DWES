@@ -5,7 +5,8 @@
  * ejercicio 1 Crear un array
  */
 $nombres = array('Ruben','Pepe', 'Juan', 'Maria');
-print_r($nombres);
+
+print_r ($nombres)."hola";
 echo "<br>";
 
 /**
