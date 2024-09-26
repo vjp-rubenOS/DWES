@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="autor" content="Ruben Ortega Serradilla">
+    <title>arrays 1</title>
+</head>
+<body>
+    
+
 <?php
 
 
@@ -5,14 +15,14 @@
  * ejercicio 1 Crear un array
  */
 $nombres = array('Ruben','Pepe', 'Juan', 'Maria');
-
+echo "Componentes del array : ";
 print_r ($nombres)."hola";
 echo "<br>";
 
 /**
  * ejercicio 2 Mostrar numero de elementos
  */
-echo "el numero de elementos es: ".count($nombres);
+echo "El numero de elementos es: ".count($nombres);
 echo "<br>";
 
 /**
@@ -20,7 +30,7 @@ echo "<br>";
  */
 
 $cadena = implode(' y ', $nombres);
-echo "los integrantes de clase son: $cadena ";
+echo "Los integrantes de clase son: $cadena ";
 echo "<br>";
 
 /**
@@ -28,6 +38,7 @@ echo "<br>";
  */
 
 sort($nombres);
+echo "Array con los nombres ordenados: ";
 print_r($nombres);
 echo "<br>";
 
@@ -40,6 +51,7 @@ shuffle($nombres);
 
 // despues lo ponemos en orden inverso
  rsort($nombres);
+ echo "Array en orden inverso: ";
  print_r($nombres);
  echo "<br>";
 
@@ -54,6 +66,7 @@ shuffle($nombres);
    * ejercicio 7 Mostrar array en orden aleatorio
    */
   shuffle($nombres);
+  echo "Array con el orden aleatorio: ";
   print_r($nombres) ;
   echo "<br>";
   /**
@@ -61,6 +74,7 @@ shuffle($nombres);
    */
   $patron_buscar='[a]';
   $array_resultado = preg_grep($patron_buscar,$nombres);
+  echo "Nombre de alumnos que tengan la a";
   print_r($array_resultado)."<br>";
 
   /**
@@ -76,40 +90,26 @@ shuffle($nombres);
   /**
    * ejercicio 10 crear una tabla con los datos
    */
-  
-  ?>
-  <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Alumnos</title>
-  
-</head>
-<body>
-    
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Edad</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($alumnos as $alumno): ?>
-                <tr>
-                    <td><?php echo $alumno['id']; ?></td>
-                    <td><?php echo $alumno['Nombre']; ?></td>
-                    <td><?php echo $alumno['Edad']; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</body>
-</html>
+  echo '<br>';
+  echo '<br>';
+  echo "Tabla con los datos del array";
+ 
+   echo '<table border="1">';
+    echo '<tr>';
+    echo '<th>Id</th>';
+    echo '<th>Nombre</th>';
+    echo '<th>Edad</th>';
+    echo '</tr>';
+    foreach($alumnos as $alumno){
+        echo '<tr>';
+        echo '<td>' . $alumno['id'] . '</td>';
+        echo '<td>' . $alumno['Nombre'] . '</td>';
+        echo '<td>' . $alumno['Edad'] . '</td>';
+        echo '</tr>';
+    }
+    echo '</table>' . '<br>';
 
-<?php
+  
 
 /**
  * Ejercicio 11 conseguir array indexsado
@@ -118,6 +118,7 @@ shuffle($nombres);
 
 
 $soloNombres= array_column($alumnos,'Nombre');
+echo "Array con solo los nombres: ";
 print_r($soloNombres);
 echo "<br>";
 
@@ -133,7 +134,8 @@ $suma = array_sum($numeros);
 
 echo "La suma de los 10 numeros es: " . $suma."<br>";
 
-?>  
+?> 
+</body> 
 
 
 
