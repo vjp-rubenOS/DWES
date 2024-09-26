@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="autor" content="Ruben Ortega Serradilla">
+<title>Fechas (ejercicio 9)</title>
+</head>
+
 <?php
 /**
  * Ejercico 1 fecha y hora actual
