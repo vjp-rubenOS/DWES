@@ -16,27 +16,28 @@ if(isset($_GET['name'])){
 }
 else{
     $name='Ruben';
+    //este seria el nombre por defecto
 }
-echo trim($name);
+echo "nombre recogido en el navegador o por defecto: ".trim($name);
 echo "<br>";
 
 /**
  * ejercicio2 muestra longitud del parametro
  */
 
-echo strlen($name);
+echo "Longitud del nombre(parametros):" .strlen($name);
 echo "<br>";
 /**
  * ejercicio3 contenido del parametro en mayuscula 
  */
 
-echo strtoupper($name);
+echo "nombre (parametro) en mayuscula: ". strtoupper($name);
 echo "<br>";
 /**
  * ejercicio4 contenido del parametro en minuscula
  */
 
-echo strtolower($name);
+echo "nombre (parametro) en mayuscula: ".strtolower($name);
 echo "<br>";
 /**
  * ejercicio 5 pasar un segundo parametro
@@ -56,21 +57,21 @@ echo "<br>";
  * ejercicio 6  mostrar numero de veces que aparece letra e
  */
 
-echo substr_count(strtoupper($name),"E");
+echo "Numero de veces que aparece la e: ". substr_count(strtoupper($name),"E");
 echo "<br>";
 /**
  * ejercicio 7 mostrar posicion de la primera a 
  */
 if(stripos($name,"a")==true){
-    echo stripos($name,"a");
+    echo "posicion de la primera 'a': ". stripos($name,"a");
 }else{
-    echo "no ";
+    echo "no hay ninguna 'a' ";
 }
 echo "<br>";
 /**
  * ejercicio 8  sustituir la o por el 0
  */
-echo str_replace("o",0,$name);
+echo "nombre(parametro) con la 'o' sustituida por '0'". str_replace("o",0,$name);
 echo "<br>";
 
 
