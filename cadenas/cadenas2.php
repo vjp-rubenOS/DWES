@@ -42,6 +42,7 @@ echo "<br>";
 /**
  * ejercicio 5 pasar un segundo parametro
  */
+echo "¿El nombre comienza por el prefijo pasado?"."<br>";
 if(isset($_GET['prefix'])){
     $prefix = $_GET['prefix'];
 
