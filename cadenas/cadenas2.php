@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="autor" content="Ruben Ortega Serradilla">
+<title>Cadena 1</title>
+</head>
+<body>
+    
+
 <?php
 /*
 ejercicio1 utilizar trim , mostrar valor de parametro
@@ -66,3 +75,4 @@ echo "<br>";
 
 
 ?>
+</body>
