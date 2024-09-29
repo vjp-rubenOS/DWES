@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta name="autor" content="Ruben Ortega Serradilla">
@@ -20,7 +20,7 @@
         return $num1 + $num2;
     };
     $resta = function ($num1, $num2) {
-        return $num1 + $num2;
+        return $num1 - $num2;
     };
     $multiplicacion = function ($num1, $num2) {
         return $num1 * $num2;
