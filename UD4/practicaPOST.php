@@ -17,7 +17,7 @@
     </form>
     <?php
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
-            echo ' fecha de nacimiento ' .($_POST['fecha']?? 'xx').' Email ' . ($_POST['email']).' Observaciones'  . ($_POST['observaciones']);
+            echo ' fecha de nacimiento ' .($_POST['fecha'] ?? 'xx').' Email ' . ($_POST['email']).' Observaciones'  . ($_POST['observaciones']);
         }
            
     ?>
