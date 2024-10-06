@@ -10,94 +10,108 @@
 <body>
     <h1>Buscar canciones</h1>
 
-    <!-- Formulario para ingresar datos -->
-    <form action ="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+    <!-- Este es el formulario que debemos rellenar -->
+    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
         <!-- Campo de texto para buscar una canción o álbum -->
         <label for="texto">Texto a buscar:</label>
         <input type="text" name="texto"><br>
 
-        <!-- Opciones de búsqueda para elegir si se busca en el título, en el álbum o en ambos -->
+        <!-- elegir el titulo,albun o los dos -->
         <label>Buscar en:</label>
         <input type="radio" name="campo_busqueda" value="titulo" checked> Título de canción
         <input type="radio" name="campo_busqueda" value="album"> Nombre del álbum
         <input type="radio" name="campo_busqueda" value="ambos"> Ambos<br>
 
-        <!-- Selección del género musical. El usuario puede filtrar por género específico o dejarlo en "Todos" -->
+        <!-- Aqui se elige el genero,  por defecto viene "todos"-->
         <label for="genero">Género musical:</label>
         <select name="genero">
-            <option value="todos">Todos</option> <!-- Selecciona todos los géneros por defecto -->
+            <option value="todos">Todos</option>
             <option value="blues">Blues</option>
             <option value="jazz">Jazz</option>
             <option value="pop">Pop</option>
             <option value="rock">Rock</option>
         </select><br>
 
-        <!-- Botón para enviar el formulario y ejecutar la búsqueda -->
+        <!-- Boton para enviarlo -->
         <input type="submit" value="Buscar">
     </form>
 
     <?php
-    // Incluye un archivo externo que tiene la función obtenerCanciones(), que devuelve un array con las canciones
+
+    // el requiere_once se utiliza para hacer referencia a otro archivo y poder utilizar lo que hay dentro como la funcion obtenerCanciones() que tiene un array
     require_once 'canciones.inc.php';
 
-    // Llama a la función obtenerCanciones para obtener el array de canciones
+    // Llamada a la funcion que esta en el archivo canciones.inc.php
     $canciones = obtenerCanciones();
 
-    // Verifica si el formulario fue enviado (si el usuario hizo clic en "Buscar")
+    // Comprueba que el formulario fue enviado despues de pulsar el boton
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // Guarda el texto ingresado por el usuario, lo pasa a minúsculas y elimina espacios al principio y final
-        $texto_busqueda = strtolower(trim($_POST['texto']));
+
+        // En esta variable se guarda el texto escrito , se pasa a minuscula para que se mas facil de buscar, se usa el trim para quitar espacios al principio y al final
+        //y se utiliza el htmlspecialchars "escapa" los caracters especiales 
+        $texto_busqueda = strtolower(trim(htmlspecialchars($_POST['texto'])));
 
         // Almacena el campo de búsqueda seleccionado (título, álbum o ambos)
         $campo_busqueda = $_POST['campo_busqueda'];
 
-        // Almacena el género seleccionado en el menú desplegable
+        //En esta variable se guarda el genero del menu desplegable
         $genero = $_POST['genero'];
 
-        // Inicializa un array vacío para almacenar las canciones que coincidan con la búsqueda
+
+        // Creamos un array vacio para guardar las canciones que coincidan con la busqueda 
         $resultado = [];
 
-        // Recorre cada canción del array para verificar si coincide con los criterios de búsqueda
+
+        // recorremos el array de las canciones para ver si alguna coincide con los criterios de busqueda
         foreach ($canciones as $cancion) {
-            // Verifica si el género de la canción coincide o si se seleccionó "Todos"
+
+            // Comprueba el genero de la cancion o si se eligio "todos" ( que esta por defecto)
             $coincideGenero = ($genero == 'todos' || strtolower($cancion['genero']) == $genero);
 
-            // Inicializa la variable para saber si el texto buscado coincide con algún campo
+
+            // Inicializamos la variable a false y si coincide con algun campo la pasaremos a true
             $coincideTexto = false;
 
-            // Si se busca solo en el título, verifica si el texto está dentro del título
+            // Compureba que el texto escrito coincida con algun titulo 
             if ($campo_busqueda == 'titulo' && strpos(strtolower($cancion['titulo']), $texto_busqueda) !== false) {
                 $coincideTexto = true;
             }
 
-            // Si se busca solo en el álbum, verifica si el texto está dentro del nombre del álbum
+
+            // Comprueba que el texto escrito coincida con algun album
             if ($campo_busqueda == 'album' && strpos(strtolower($cancion['album']), $texto_busqueda) !== false) {
                 $coincideTexto = true;
             }
 
-            // Si se busca en ambos (título y álbum), verifica si el texto está en alguno de los dos campos
-            if ($campo_busqueda == 'ambos' && 
-               (strpos(strtolower($cancion['titulo']), $texto_busqueda) !== false || 
-                strpos(strtolower($cancion['album']), $texto_busqueda) !== false)) {
+
+            // Comprueba que el texto escrito esta en alguno de los dos campos 
+            if (
+                $campo_busqueda == 'ambos' &&
+                (strpos(strtolower($cancion['titulo']), $texto_busqueda) !== false ||
+                    strpos(strtolower($cancion['album']), $texto_busqueda) !== false)
+            ) {
                 $coincideTexto = true;
             }
 
-            // Si el género coincide y el texto coincide, añade la canción al array de resultados
+
+            // Si coincide el genero y el texto con alguno de los apartados dicho antes se añade la cancion al array 
             if ($coincideGenero && $coincideTexto) {
+               
                 $resultado[] = $cancion;
             }
         }
 
-        // Si hay canciones que coinciden, las muestra en una tabla
+        // Si hay coincidencia en las canciones las muestra 
         if (!empty($resultado)) {
-            // Crea una tabla para mostrar las canciones encontradas
+            //Con echo mostramos una tabla con el titulo,album y genero 
             echo "<table border='1'>
                     <tr>
                         <th>Título</th>
                         <th>Álbum</th>
                         <th>Género</th>
                     </tr>";
-            // Recorre cada canción que coincidió con la búsqueda y la muestra en una fila de la tabla
+
+            // Recorremos el array , con las canciones que coincidieron con la busqueda y las muestra
             foreach ($resultado as $cancion) {
                 echo "<tr>
                         <td>{$cancion['titulo']}</td>
@@ -105,7 +119,7 @@
                         <td>{$cancion['genero']}</td>
                       </tr>";
             }
-            // Cierra la tabla
+
             echo "</table>";
         } else {
             // Si no hay resultados, muestra un mensaje indicando que no se encontraron canciones
