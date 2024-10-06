@@ -6,30 +6,15 @@
     <title>Ejercicio 2 POST</title>
 </head>
 <body>
-    <form action ="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+<table border="1px solid">
+        <th>
+            <td>Titulo</td>
+            <td>Album</td>
+            <td>Genero</td>
+        </th>
+    </table>
 </body>
-<label for="frase" >Ingrese una frase:</label>
-<input type="text" name="frase" value="">
-<label for="palabra">Buscar palabra</label>
-<input type="text" name="palabra" value="">
-<input type="submit" value="Comprobar">
-</form>
-<?php
-
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            echo 'La frase: ' . $_POST['frase'].'<br>';
-        
-            // Verificamos si la palabra está presente en la frase
-            if (stripos($_POST['frase'], $_POST['palabra']) !== false) {
-                echo " La frase contiene " . $_POST['palabra'];
-            } else {
-                echo " La frase NO contiene " . $_POST['palabra'];
-            }
-        }
-
-        
-           
-    ?>
+    
 
   
-</html>
+</html>A
