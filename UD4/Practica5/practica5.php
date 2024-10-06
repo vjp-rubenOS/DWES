@@ -114,9 +114,9 @@
             // Recorremos el array , con las canciones que coincidieron con la busqueda y las muestra
             foreach ($resultado as $cancion) {
                 echo "<tr>
-                        <td>{$cancion['titulo']}</td>
-                        <td>{$cancion['album']}</td>
-                        <td>{$cancion['genero']}</td>
+                        <td>$cancion[titulo]</td>
+                        <td>$cancion[album]</td>
+                        <td>$cancion[genero]</td>
                       </tr>";
             }
 
