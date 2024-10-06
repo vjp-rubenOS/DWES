@@ -16,7 +16,7 @@
         <label for="texto">Texto a buscar:</label>
         <input type="text" name="texto"><br>
 
-        <!-- elegir el titulo,albun o los dos -->
+        <!-- elegir el titulo,album o los dos -->
         <label>Buscar en:</label>
         <input type="radio" name="campo_busqueda" value="titulo" checked> Título de canción
         <input type="radio" name="campo_busqueda" value="album"> Nombre del álbum
@@ -51,7 +51,7 @@
         //y se utiliza el htmlspecialchars "escapa" los caracters especiales 
         $texto_busqueda = strtolower(trim(htmlspecialchars($_POST['texto'])));
 
-        // Almacena el campo de búsqueda seleccionado (título, álbum o ambos)
+        // Almacena el campo de búsqueda seleccionado (titulo,album o ambos)
         $campo_busqueda = $_POST['campo_busqueda'];
 
         //En esta variable se guarda el genero del menu desplegable
@@ -96,7 +96,7 @@
 
             // Si coincide el genero y el texto con alguno de los apartados dicho antes se añade la cancion al array 
             if ($coincideGenero && $coincideTexto) {
-               
+
                 $resultado[] = $cancion;
             }
         }
