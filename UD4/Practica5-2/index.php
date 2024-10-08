@@ -6,7 +6,7 @@
     require 'canciones.inc.php';
 
     // Llamada a la funcion que esta en el archivo canciones.inc.php
-    $canciones = obtenerCanciones();
+    $canciones = sacarCanciones();
 
     // Comprueba que el formulario fue enviado despues de pulsar el boton
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
