@@ -30,21 +30,21 @@
         foreach ($canciones as $cancion) {
 
             // Comprueba el genero de la cancion o si se eligio "todos" ( que esta por defecto)
-            $coincideGenero = ($genero == 'todos' || strtolower($cancion['genero']) == $genero);
+            $coincidirGenero = ($genero == 'todos' || strtolower($cancion['genero']) == $genero);
 
 
             // Inicializamos la variable a false y si coincide con algun campo la pasaremos a true
-            $coincideTexto = false;
+            $coincidirTexto = false;
 
             // Compureba que el texto escrito coincida con algun titulo 
             if ($campoBuscar == 'titulo' && strpos(strtolower($cancion['titulo']), $texto_buscar) !== false) {
-                $coincideTexto = true;
+                $coincidirTexto = true;
             }
 
 
             // Comprueba que el texto escrito coincida con algun album
             if ($campoBuscar == 'album' && strpos(strtolower($cancion['album']), $texto_buscar) !== false) {
-                $coincideTexto = true;
+                $coincidirTexto = true;
             }
 
 
@@ -54,12 +54,12 @@
                 (strpos(strtolower($cancion['titulo']), $texto_buscar) !== false ||
                     strpos(strtolower($cancion['album']), $texto_buscar) !== false)
             ) {
-                $coincideTexto = true;
+                $coincidirTexto = true;
             }
 
 
             // Si coincide el genero y el texto con alguno de los apartados dicho antes se añade la cancion al array 
-            if ($coincideGenero && $coincideTexto) {
+            if ($coincidirGenero && $coincidirTexto) {
 
                 $encontradas[] = $cancion;
             }
