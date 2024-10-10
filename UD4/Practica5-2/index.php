@@ -12,7 +12,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // En esta variable se guarda el texto escrito , se pasa a minuscula para que se mas facil de buscar, se usa el trim para quitar espacios al principio y al final
-        //y se utiliza el htmlspecialchars "escapa" los caracters especiales 
+        //y se utiliza el htmlspecialchars "escapa" los caracteres especiales 
         $texto_buscar = strtolower(trim(htmlspecialchars($_POST['texto'])));
 
         // Almacena el campo de búsqueda seleccionado (titulo,album o ambos)
