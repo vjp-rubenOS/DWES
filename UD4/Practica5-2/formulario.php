@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="autor" content="Ruben Ortega Serradilla">
+    <title>Ejercicio 1 UT4</title>
 </head>
 <body>
     <h1>Buscar canciones</h1>
