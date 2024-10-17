@@ -52,7 +52,7 @@ public function setNombre($nombre): void{
     public function setFoto($foto): void{
         $this->foto = $foto;
     }
-public function __toString()
+    public function __toString()
     {
         return 'Id: ' . $this->id . ' Nombre: ' . $this->nombre . ' telefono: ' . $this->telefono . ' fechaAlta: ' . $this->fechaAlta->format('Y-m-d') . ' foto: ' . $this->foto;
     }
