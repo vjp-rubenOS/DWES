@@ -9,8 +9,8 @@
 
     <?php
     // Incluimos las clases de selectores que hemos creado
-    
-  
+    require_once 'SIRadioOpcion.php';
+    require_once 'SISelect.php';
 
     // Creamos los objetos de los selectores usando las clases
     $campoBuscarRadio = new SIRadioOpcion("Buscar en:", "campoBuscar");
