@@ -20,23 +20,23 @@ final class SISelect extends SelectorIndividual {
         parent::__construct($titulo, $nombre, $this->opcionesSelect, $seleccionado);
     }
 
-    // Función para crear el menú desplegable
+    // Funcion para crear el menu desplegable
     public function generaSelector() {
-        // Creamos un label y el inicio del menú desplegable
-        $output = "<label>{$this->titulo}</label><br>";
-        $output .= "<select name='{$this->nombre}'>";
+        // Creamocion  label y el inicio del menu desplegable
+        $selectHTML = "<label>{$this->titulo}</label><br>";
+        $selectHTML .= "<select name='{$this->nombre}'>";
 
-        // Agregamos cada opción del menú desplegable
+        // Agregamos cada opción del menu desplegable
         foreach ($this->opciones as $valor => $texto) {
-            // Verificamos si la opción debe estar seleccionada
-            $selected = ($valor == $this->seleccionado) ? "selected" : "";
+            // Verificamos si la opcion debe estar seleccionada
+            $seleccion = ($valor == $this->seleccionado) ? "selected" : "";
             // Generamos el HTML de cada opción
-            $output .= "<option value='{$valor}' {$selected}>{$texto}</option>";
+            $selectHTML.= "<option value='{$valor}' {$seleccion}>{$texto}</option>";
         }
 
-        // Cerramos el menú desplegable
-        $output .= "</select><br>";
-        return $output;
+        // Cerramos el menu desplegable
+        $selectHTML .= "</select><br>";
+        return $selectHTML;
     }
 }
 ?>
