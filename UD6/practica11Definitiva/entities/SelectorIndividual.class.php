@@ -1,5 +1,5 @@
 <?php
-
+//Clase abstracta 
 abstract class SelectorIndividual implements ISelectorIndividual {
     protected string $titulo;
     protected string $nombre;

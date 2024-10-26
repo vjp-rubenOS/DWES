@@ -1,9 +1,9 @@
 <?php 
 // Importar clases necesarias
-require_once 'entiti/ISelectorIndividual.php';
-require_once 'entiti/SelectorIndividual.php';
-require_once 'entiti/SIRadioOpcion.php';
-require_once 'entiti/SISelect.php';
+require_once 'entities/ISelectorIndividual.php';
+require_once 'entities/SelectorIndividual.class.php';
+require_once 'entities/SIRadioOpcion.class.php';
+require_once 'entities/SISelect.class.php';
 
 // Crear opciones para los radio buttons
 $opcionesRadio = [
