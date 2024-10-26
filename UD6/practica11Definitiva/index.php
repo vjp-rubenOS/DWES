@@ -1,11 +1,12 @@
 <?php 
-// Importar clases necesarias
+// Importar las clases
 require_once 'entities/ISelectorIndividual.php';
 require_once 'entities/SelectorIndividual.class.php';
 require_once 'entities/SIRadioOpcion.class.php';
 require_once 'entities/SISelect.class.php';
 
 // Crear opciones para los radio buttons
+//Opciones para los botones de radio
 $opcionesRadio = [
     "titulo" => "Título de canción",
     "album" => "Nombre del álbum",
@@ -13,7 +14,7 @@ $opcionesRadio = [
 ];
 $radioCampoBuscar = new SIRadioOpcion("Buscar en:", "campoBuscar", $opcionesRadio, 0);
 
-// Crear opciones para el select de géneros
+// Opciones para el selector por generos
 $opcionesGenero = [
     "todos" => "Todos",
     "blues" => "Blues",
@@ -23,6 +24,6 @@ $opcionesGenero = [
 ];
 $selectGenero = new SISelect("Género musical:", "genero", $opcionesGenero, 0);
 
-// Incluir la vista y pasarle las variables
+
 require_once 'view/index.view.php';
 ?>

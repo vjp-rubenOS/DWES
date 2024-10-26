@@ -1,27 +1,27 @@
 <?php
 
-// Clase que genera un grupo de botones de radio en HTML
+// Clase que genera un grupo de botones de radio en HTML y que herece de la clase SelectorIndividual
 final class SIRadioOpcion extends SelectorIndividual {
     public function generaSelector(): string {
-        // Comienza el HTML con una etiqueta de "label" (etiqueta) para el grupo de botones de radio
-        $output = "<label>{$this->titulo}</label>";
+        //El HTML empieza con un label y su etiqueta para el grupo de botones de tipo radio 
+        $radioHTML= "<label>{$this->titulo}</label>";
 
-        // Variable para seguir el índice de cada opción
+        // Variable para indicar el indice de cada opcion
         $index = 0;
 
-        // Recorre cada opción y genera un botón de radio
+        //Recorrer las opciones y generar un boton por cada una de ellas
         foreach ($this->valores as $valor => $texto) {
-            // Marca el botón como "checked" si es el seleccionado por defecto
-            $checked = ($index === $this->seleccionadoPorDefecto) ? 'checked' : '';
+            // Pone el boton como marcado si es el seleccionado
+            $comprobar = ($index === $this->seleccionadoPorDefecto) ? 'checked' : '';
             
-            // Agrega el HTML para cada botón de radio
-            $output .= "<input type='radio' name='{$this->nombre}' value='{$valor}' {$checked}> {$texto}";
+             // Crea el HTML de cada boton
+            $radioHTML .= "<input type='radio' name='{$this->nombre}' value='{$valor}' {$comprobar}> {$texto}";
             
             $index++;
         }
 
-        // Retorna todo el HTML generado
-        return $output."<br>";
+        // Retorna todo el HTML creado
+        return $radioHTML."<br>";
     }
 }
 
