@@ -9,28 +9,6 @@
 <body>
     <h1>Buscar canciones</h1>
 
-    <?php
-   
-
-    // Crear opciones para los radio buttons
-    $opcionesRadio = [
-        "titulo" => "Título de canción",
-        "album" => "Nombre del álbum",
-        "ambos" => "Ambos"
-    ];
-    $radioCampoBuscar = new SIRadioOpcion("Buscar en:", "campoBuscar", $opcionesRadio, 0);
-
-    // Crear opciones para el select de géneros
-    $opcionesGenero = [
-        "todos" => "Todos",
-        "blues" => "Blues",
-        "jazz" => "Jazz",
-        "pop" => "Pop",
-        "rock" => "Rock"
-    ];
-    $selectGenero = new SISelect("Género musical:", "genero", $opcionesGenero, 0);
-    ?>
-
     <!-- Formulario -->
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
         <!-- Campo de texto para buscar una canción o álbum -->
