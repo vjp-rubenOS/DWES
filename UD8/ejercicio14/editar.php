@@ -1,22 +1,41 @@
 <?php
+// Incluimos el archivo de conexión con la base de datos
 include "db.php";
 
+// Obtenemos el valor del id para poder editarlo 
 $id = $_GET['id'];
+
+// Ejecutamos la consulta para obtener el contacto con ese id  
 $result = $conn->query("SELECT * FROM Contactos WHERE id = $id");
+
+// Recuperamos los resultados de la consulta y los asignamos a la variable $contacto.
+// Esto devuelve un array asociativo con los datos del contacto seleccionado.
 $contacto = $result->fetch_assoc();
 
+// Comprobamos si el formulario ha sido enviado por metodo POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+    // Recogemos los valores enviados desde el formulario.
     $nombre = $_POST['nombre'];
-    $telefono = $_POST['telefono'];
+    $telefono = $_POST['telefono']; 
 
-    $sql = "UPDATE Contactos SET nombre = ?, telefono = ? WHERE id = ?";
+    // Preparamos la consulta SQL para actualizar los datos del contacto en la base de datos.
+    $sql = "UPDATE Contactos SET nombre = ?, telefono = ? WHERE id = ?";// volvemos a utilizar ? para evitar la inyeccion SQL
+
+    // Preparamos la declaración SQL 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssi", $nombre, $telefono, $id);
+    
+    // Vinculamos los parámetros del formulario con los valores
+    $stmt->bind_param("ssi", $nombre, $telefono, $id); //ssi (string,string,entero)
+    
+    // Ejecutamos la consulta para actualizar el contacto.
     $stmt->execute();
 
+    // Redirigimos a la pagina principal
     header("Location: index.php");
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -24,11 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Contacto</title>
-    <!-- Bootstrap CSS -->
+   
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<!-- Barra de navegación -->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Agenda</a>
@@ -48,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </nav>
 
-<!-- Contenedor principal -->
+
 <div class="container mt-5">
     <h1 class="text-center mb-4">Editar Contacto</h1>
     <form method="POST" class="card p-4">
@@ -65,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 </div>
 
-<!-- Bootstrap JS Bundle -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

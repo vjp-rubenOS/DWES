@@ -1,6 +1,7 @@
 <?php
+// Incluimos el archivo de conexión con la base de datos
 include "db.php";
-
+// Consulta de la base de datos 
 $result = $conn->query("SELECT * FROM Contactos");
 ?>
 
